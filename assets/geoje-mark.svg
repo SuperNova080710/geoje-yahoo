@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">거제의 가을 해와 바다</title>
+  <rect width="64" height="64" rx="17" fill="#f6f1e8"/>
+  <path d="M8 44c4-6 10-10 16-9 5 0 9 3 12 8H8Z" fill="#36564a"/>
+  <circle cx="40" cy="23" r="13" fill="#df8b59"/>
+  <circle cx="36" cy="22" r="1.35" fill="#4e3d32"/>
+  <circle cx="44" cy="22" r="1.35" fill="#4e3d32"/>
+  <path d="M36 27c2 2.6 6 2.6 8 0" fill="none" stroke="#4e3d32" stroke-width="1.7" stroke-linecap="round"/>
+  <path d="M0 45c8-4 13-4 21 0s14 4 22 0 14-4 21 0v19H0V45Z" fill="#517d72"/>
+  <path d="M0 51c8-4 13-4 21 0s14 4 22 0 14-4 21 0" fill="none" stroke="#dce8d7" stroke-width="2.4" stroke-linecap="round"/>
+  <path d="M0 58c8-4 13-4 21 0s14 4 22 0 14-4 21 0" fill="none" stroke="#8eb7a6" stroke-width="2" stroke-linecap="round"/>
+</svg>
