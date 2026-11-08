@@ -2,3 +2,7 @@
 @media(min-width:850px){.topbar{padding:0 6vw}.cover{height:500px;padding:85px 8vw 50px}.cover-content>p:not(.overline){max-width:none}.planner{padding:65px 4vw 100px}.planner-head h2{font-size:33px}.day-switch{max-width:600px;position:static}.journey-layout{grid-template-columns:minmax(0,1fr) minmax(350px,.8fr);align-items:start;gap:18px}.map-card{position:sticky;top:20px}.map-frame{height:570px}.cards-column{gap:18px}.bottom-nav{display:none}footer{padding-bottom:30px}}
 @media(max-width:380px){.map-footer{flex-direction:column;align-items:flex-start}.day-tab{padding:12px 8px}.day-heading>span{font-size:40px}.map-frame{height:310px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important}.reveal{opacity:1;transform:none}}
+/* Keep the falling leaves between the cover texture and the readable text. */
+.cover::after{z-index:1}
+.cover #heroLines{z-index:0}
+.cover-content,.cover-bottom{z-index:3}
