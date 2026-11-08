@@ -9,11 +9,12 @@
 - 일부 식당 마커는 지역을 표시하는 **개략 위치**입니다. 주소가 확인되지 않은 곳은 상세 주소를 표시하지 않습니다. 정확한 위치와 영업·메뉴는 네이버 지도에서 확인하세요.
 - 지도 연결선은 방문 순서의 직선 연결이며 자동차 주행 경로가 아닙니다.
 - 날짜 선택은 URL 해시(`#day-1` 등)에 담깁니다. 하단 바로 지도를 포함한 각 패널로 이동할 수 있습니다.
-- 화면 진입 애니메이션, 움직이는 선과 동선 애니메이션은 움직임 줄이기 설정을 따릅니다.
+- 첫 화면 낙엽은 모바일에서 개수를 줄이고 화면 밖·숨긴 탭에서는 정지합니다. 움직임 줄이기 설정을 따릅니다.
+- 화면 진입 애니메이션, 움직이는 선과 동선 애니메이션도 움직임 줄이기 설정을 따릅니다.
 
 ## 실행과 배포
 
-빌드가 필요하지 않습니다. `index.html`, `styles.css`, `app.js`, `vendor/leaflet.css`를 정적 서버에 올리면 됩니다. Vercel에서는 프레임워크를 **Other**, 프로덕션 브랜치를 `main`으로 지정합니다. Next.js가 없어도 현재의 지도 문제는 로컬 Leaflet CSS로 해결됩니다.
+Node.js 20 이상에서 `npm ci` 후 `npm run build`를 실행합니다. `dist/`에 사이트 정적 파일과 낙엽 번들이 생성됩니다. Vercel에서는 `vercel.json`에 지정한 빌드 명령과 출력 디렉터리 `dist`를 사용하고 프로덕션 브랜치는 `main`입니다.
 
 지도 JS와 OpenStreetMap 타일은 외부 네트워크에서 로드됩니다. 네트워크가 제한되면 장소별 검색 링크를 사용할 수 있습니다.
 
@@ -23,4 +24,4 @@
 
 ## 자료
 
-선형 애니메이션은 이 프로젝트에서 작성했습니다. `lucasmarkes/hairline` 코드를 포함하지 않았습니다. 지도 데이터 © OpenStreetMap contributors. Leaflet 1.9.4 CSS는 BSD-2-Clause 라이선스입니다.
+낙엽 효과는 MIT 라이선스의 [falling-leaves](https://github.com/ernkerr/falling-leaves)를 번들로 포함하며 배포 결과에 라이선스 파일을 함께 둡니다. 선형 애니메이션은 이 프로젝트에서 작성했습니다. `lucasmarkes/hairline` 코드를 포함하지 않았습니다. 지도 데이터 © OpenStreetMap contributors. Leaflet 1.9.4 CSS는 BSD-2-Clause 라이선스입니다.
