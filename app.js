@@ -20,7 +20,7 @@ const places = {
 const foodPlaces={
   '꽃숯갈비':{name:'꽃숯갈비',coords:[34.84,128.699],query:'꽃숯갈비 거제'},
   '쑝쑝돈까스 거제 지세포점':{name:'쑝쑝돈까스 거제 지세포점',coords:[34.834,128.697],query:'쑝쑝돈까스 거제 지세포점'},
-  '돈탐라 지세포점':{name:'돈탐라 지세포점',coords:[34.835,128.698],query:'거제시 일운면 지세포로 73',addressOnly:true},
+  '모래성분식포차':{name:'모래성분식포차',coords:[34.911346,128.710331],query:'모래성분식포차'},
   '불멍캠핑가든 소노캄 지세포 본점':{name:'불멍캠핑가든 소노캄 지세포 본점',coords:[34.846,128.697],query:'불멍캠핑가든 소노캄 지세포 본점'},
   'A212 글램핑 바베큐':{name:'A212 글램핑 바베큐',coords:[34.799,128.682],query:'A212 바베큐장'},
   'BBQ Factory 소노캄 거제':{name:'BBQ Factory 소노캄 거제',coords:hotel,query:'BBQ Factory 소노캄 거제',official:'https://www.sonohotelsresorts.com/calm_gj/restaurant/detail/DIN00000416'},
@@ -44,7 +44,7 @@ const days = {
     {id:'hotel',detail:'체크인 · 소노캄 거제에서 2박'}
   ],groups:[
     {label:'점심 · 전복도와 대안',items:[['전복도','전복·한식 · 방문 예정','jeonbokdo'],['꽃숯갈비','돼지갈비 · 고기 대안',null],['쑝쑝돈까스 거제 지세포점','돈가스 · 해산물 비선호자 대안',null]]},
-    {label:'저녁 · 소노캄 / 지세포',items:[['돈탐라 지세포점','제주 흑돼지 · 업체 정보·영업 여부 확인 필요',null],['꽃숯갈비','숯불구이 · 단체 식사',null],['몬테로쏘','피자·스테이크 · 숙소 내부','hotel'],['키친루셀로','이탈리안 · 구조라 방향',null]]},
+    {label:'저녁 · 지세포 / 덕포',items:[['꽃숯갈비','숯불구이 · 단체 식사',null],['몬테로쏘','피자·스테이크 · 숙소 내부','hotel'],['키친루셀로','이탈리안 · 구조라 방향',null],['모래성분식포차','치킨·분식 · 덕포해변, 숙소에서 별도 이동',null]]},
     {label:'카페',items:[['글래씨스','대형 오션뷰 베이커리','glassis'],['몬테로쏘 베이커리&음료','숙소 안에서 쉬기','hotel']]}
   ]},
   2:{date:'SUNDAY · NOV 22',title:'섬과 바람을 따라',description:'외도의 정원에서 남쪽 해안으로, 그리고 와현의 오프로드까지.',stops:[
@@ -76,7 +76,7 @@ const $=s=>document.querySelector(s);
 const locations={
   jeonbokdo:'경남 거제시 일운면 소동6길 17-2, 2층',gujora:'경남 거제시 일운면 구조라리',kart:'경남 거제시 일운면 거제대로 1514-18',glassis:'경남 거제시 일운면 거제대로 1514-17',hotel:'경남 거제시 일운면 거제대로 2660',ferry:'경남 거제시 남부면 도장포1길 55',oedo:'경남 거제시 일운면 외도 일대',wind:'경남 거제시 남부면 갈곶리',sinseondae:'경남 거제시 남부면 갈곶리',atv:'경남 거제시 일운면 와현리 546',rowa:'경남 거제시 일운면 지세포해안로 194',cable:'경남 거제시 동부면 거제중앙로 288',luge:'경남 통영시 도남동 일대'
 };
-const foodLocations={'불멍캠핑가든 소노캄 지세포 본점':'경남 거제시 일운면 소동7길 52','A212 글램핑 바베큐':'경남 거제시 일운면 거제대로 1826, 1층','BBQ Factory 소노캄 거제':'경남 거제시 일운면 거제대로 2660, EAST 지하 1층 야외','돈탐라 지세포점':'경남 거제시 일운면 지세포로 73','함목 중화요리':'경남 거제시 남부면 해금강로 12','오닐':'경남 거제시 일운면 거제대로 1982','통영루지 김치쌈':'경남 통영시 데메3길 27-44','바다한상':'경남 거제시 동부면 거제중앙로 288, 2층','커피홀 통영도남점':'경남 통영시 발개로 164-6, 2층'};
+const foodLocations={'불멍캠핑가든 소노캄 지세포 본점':'경남 거제시 일운면 소동7길 52','A212 글램핑 바베큐':'경남 거제시 일운면 거제대로 1826, 1층','BBQ Factory 소노캄 거제':'경남 거제시 일운면 거제대로 2660, EAST 지하 1층 야외','모래성분식포차':'경남 거제시 덕포5길 32-1, 103호','함목 중화요리':'경남 거제시 남부면 해금강로 12','오닐':'경남 거제시 일운면 거제대로 1982','통영루지 김치쌈':'경남 통영시 데메3길 27-44','바다한상':'경남 거제시 동부면 거제중앙로 288, 2층','커피홀 통영도남점':'경남 통영시 발개로 164-6, 2층'};
 // Food entries anchored to an itinerary stop still need their own venue search term.
 const foodSearchQueries={
   '전복도':'전복도 소노캄거제본점',
@@ -93,7 +93,7 @@ const state={day:1,selected:null,map:null,markers:[],lines:[],bounds:null,foodMa
 const mapLink=place=>`https://map.naver.com/p/search/${encodeURIComponent(typeof place==='string'?place:(place.query||place.name))}`;
 function showToast(message){const el=$('#toast');el.textContent=message;el.classList.add('show');clearTimeout(showToast.timer);showToast.timer=setTimeout(()=>el.classList.remove('show'),2800)}
 function pinIcon(label,food=false,selected=false){return L.divIcon({className:'',html:`<span class="pin ${food?'food':''} ${selected?'selected':''}">${label}</span>`,iconSize:[32,32],iconAnchor:[16,16],popupAnchor:[0,-20]})}
-function popupHtml(name,place,label){return `<span class="popup-label">${label}</span><div class="popup-title">${name}</div><a class="popup-link" href="${mapLink(place)}" target="_blank" rel="noopener noreferrer">${place.addressOnly?'주소 위치 확인':'네이버 지도에서 확인'} ↗</a>`}
+function popupHtml(name,place,label){return `<span class="popup-label">${label}</span><div class="popup-title">${name}</div><a class="popup-link" href="${mapLink(place)}" target="_blank" rel="noopener noreferrer">네이버 지도에서 확인 ↗</a>`}
 function focusPlace(place,index,kind='stop'){
   state.selected=`${kind}-${index}`;
   document.querySelectorAll('.stop-item,.food-item').forEach(el=>el.classList.toggle('is-selected',el.dataset.focus===state.selected));
@@ -124,7 +124,7 @@ function renderMap(){
   day.stops.forEach((stop,i)=>{const place=places[stop.id],key=`stop-${i}`;const marker=L.marker(place.coords,{icon:pinIcon(String(i+1).padStart(2,'0'))}).addTo(state.map).bindPopup(popupHtml(place.name,place,`DAY ${state.day} · ${String(i+1).padStart(2,'0')}`));marker.on('click',()=>{state.selected=key;document.querySelectorAll('.stop-item,.food-item').forEach(el=>el.classList.toggle('is-selected',el.dataset.focus===key));state.markers.forEach(({marker:m,key:k})=>m.getElement()?.querySelector('.pin')?.classList.toggle('selected',k===key))});state.markers.push({marker,key})});
   state.bounds=L.latLngBounds(day.stops.map(s=>places[s.id].coords));fitMap(false);setTimeout(()=>state.map.invalidateSize(),50);
 }
-function placeLinks(place,address){const row=document.createElement('div');row.className='place-links';const location=document.createElement('span');location.className='place-address';location.textContent=address||'상세 주소는 지도에서 확인';const link=document.createElement('a');link.href=mapLink(place);link.target='_blank';link.rel='noopener noreferrer';link.textContent=place.addressOnly?'네이버 지도 · 주소 위치 ↗':'네이버 지도 · 메뉴/위치 ↗';link.setAttribute('aria-label',`${place.name} 네이버 지도에서 ${place.addressOnly?'주소 위치':'메뉴와 위치'} 확인`);row.append(location,link);if(place.official){const official=document.createElement('a');official.href=place.official;official.target='_blank';official.rel='noopener noreferrer';official.textContent='공식 운영 안내 ↗';row.append(official)}return row}
+function placeLinks(place,address){const row=document.createElement('div');row.className='place-links';const location=document.createElement('span');location.className='place-address';location.textContent=address||'상세 주소는 지도에서 확인';const link=document.createElement('a');link.href=mapLink(place);link.target='_blank';link.rel='noopener noreferrer';link.textContent='네이버 지도 · 메뉴/위치 ↗';link.setAttribute('aria-label',`${place.name} 네이버 지도에서 메뉴와 위치 확인`);row.append(location,link);if(place.official){const official=document.createElement('a');official.href=place.official;official.target='_blank';official.rel='noopener noreferrer';official.textContent='공식 운영 안내 ↗';row.append(official)}return row}
 function renderDay(day){
   state.day=day;state.selected=null;const data=days[day];
   document.querySelectorAll('.day-tab').forEach(tab=>{const active=Number(tab.dataset.day)===day;tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1});
