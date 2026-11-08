@@ -3,7 +3,7 @@ import { FallingLeaves } from 'falling-leaves';
 const mobile = matchMedia('(max-width: 599px)');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 const settings = () => ({
-  count: mobile.matches ? 8 : 16,
+  count: mobile.matches ? 14 : 28,
   size: mobile.matches ? [12, 22] : [15, 28]
 });
 

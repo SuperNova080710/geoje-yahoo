@@ -5,4 +5,10 @@
 /* Keep the cover's line decoration behind its text. */
 .cover::after{z-index:1}
 .cover #heroLines{z-index:0}
-.cover-content,.cover-bottom{z-index:3}
+.cover-content,.cover-bottom{z-index:7}
+/* Opaque travel controls sit above the fixed, click-through leaf canvas (z-index: 6). */
+.topbar,.day-switch{z-index:8}
+.map-card,.panel{z-index:7}
+.panel{position:relative}
+@media(max-width:849px){.map-card{position:relative}}
+@media(min-width:850px){.day-switch{position:relative}}
